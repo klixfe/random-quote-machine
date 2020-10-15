@@ -1,0 +1,92 @@
+$primary-font: Bad Script;
+$tb-color: #6f649b;
+$primary-color: #8C83AF;
+$font-color: white;
+$border-radius: 10px;
+
+.grid-container {
+  display: grid;
+  grid-template-rows: [header] 25px [body] auto [footer] 25px;
+  grid-template-columns: [left-gutter] 1fr [content] 4fr [right-gutter] 1fr;
+  row-gap: 2px;
+}
+
+.content {
+  grid-row: body;
+  grid-column: content;
+  background-color: $primary-color;
+  display: grid;
+  grid-template-columns: [left-gutter] 50px [main-body] 4fr [right-gutter] 50px;
+  grid-template-rows: [text-area] 3fr [button-area] 1fr;
+}
+
+.footer {
+  grid-row: footer;
+  grid-column: content / right-gutter;
+  background-color: $tb-color;
+  border-radius: 0px 0px $border-radius $border-radius;
+}
+
+.header {
+  grid-column: content / right-gutter;
+  grid-row: header;
+  background-color: $tb-color;
+  border-radius: $border-radius $border-radius 0px 0px;
+}
+
+.text-area {
+  grid-row: text-area;
+  grid-column: main-body / right-gutter;
+  padding: 0px 10px 0px 10px;
+  font-family: $primary-font;
+  color: $font-color;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.button-area {
+  grid-row: button-area / right-gutter;
+  grid-column: main-body;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-bottom: 1em;
+}
+
+.social {
+  align-self: center;
+  color: $font-color;
+  font-size: 2em;
+  background-color: $tb-color;
+  border-radius: $border-radius;
+  padding: 0px 5px 0px 5px;
+}
+
+.submit {
+  align-self: center;
+}
+
+.format-text {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.button {
+  font-family: $primary-font;
+  font-size: 1.25em;
+  background-color: $tb-color;
+  color: $font-color;
+  border-radius: $border-radius;
+  border: none;
+  padding: 0px 10px 0px 10px;
+}
+
+.button-hover {
+  cursor: pointer;
+  &:hover {
+    filter: brightness(60%);
+  }
+}
